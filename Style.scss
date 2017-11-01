@@ -1,0 +1,225 @@
+/*
+Intro text */
+
+body{background-color:#ffffff;width:auto;margin:auto auto;}
+.box1 {
+  width:auto;
+  height:auto;
+  background-color:#F1A7FE;
+  margin:0 auto;
+  float:left;
+  font-size:50px;
+  padding:10px;
+  color:#fff;
+}
+.box2{
+  width:auto;
+  height:auto;
+  background-color:#F99245;
+  margin:0 auto;
+  float:left;
+  font-size:50px;
+  padding:10px;
+  color:#fff;
+}
+.box3 {
+  width:auto;
+  height:auto;
+  background-color:#FFDDCA;
+  margin:0 auto;
+  float:left;
+  font-size:50px;
+  padding:10px;
+  color:#AFEEEE;
+}
+.box4 {
+  width:auto;
+  height:auto;
+  background-color:#D4F1F9;
+  margin:0 auto;
+  float:left;
+  font-size:50px;
+  padding:10px;
+  color:#AFEEEE;
+}
+.box5 {
+  width:auto;
+  height:auto;
+  background-color:#F984E5;
+  margin:0 auto;
+  float:left;
+  font-size:50px;
+  padding:10px;
+  color:#fff;
+}
+.box6 {
+  width:auto;
+  height:auto;
+  background-color:#98FB98;
+  margin:0 auto;
+  float:left;
+  font-size:50px;
+  padding:10px;
+  color:#fff;
+}
+/* Step 1: Build the Animation */
+@-webkit-keyframes aniload {
+  from {-webkit-transform:translate(0px, 1000px)}
+  to   {-webkit-transform:translate(0px, 0px)}
+}
+
+@-moz-keyframes aniload {
+  from {-moz-transform:translate(0px, 1000px)}
+  to   {-moz-transform:translate(0px, 0px)}
+}
+
+@-ms-keyframes aniload {
+  from {-ms-transform:translate(0px, 1000px)}
+  to   {-ms-transform:translate(0px, 0px)}
+}
+
+@-o-keyframes aniload {
+  from {-o-transform:translate(0px, 1000px)}
+  to   {-o-transform:translate(0px, 0px)}
+}
+
+@keyframes aniload {
+  from {transform:translate(0px, 1000px)}
+  to   {transform:translate(0px, 0px)}
+}
+
+/* Step 2: Call the Animation */
+#box1 {
+  -webkit-animation:aniload 1s;
+  -moz-animation:aniload 1s;
+  -ms-animation:aniload 1s;
+  -o-animation:aniload 1s;
+  animation:aniload 1s;
+}
+
+#box2 {
+  -webkit-animation:aniload 2s;
+  -moz-animation:aniload 2s;
+  -ms-animation:aniload 2s;
+  -o-animation:aniload 2s;
+  animation:aniload 2s;
+}
+
+#box3 { 
+  -webkit-animation:aniload 3s;
+  -moz-animation:aniload 3s;
+  -ms-animation:aniload 3s;
+  -o-animation:aniload 3s;
+  animation:aniload 3s;
+}
+
+#box4 {
+  -webkit-animation:aniload 4s;
+  -moz-animation:aniload 4s;
+  -ms-animation:aniload 4s;
+  -o-animation:aniload 4s;
+  animation:aniload 4s;
+}
+
+#box5 {
+  -webkit-animation:aniload 5s;
+  -moz-animation:aniload 5s;
+  -ms-animation:aniload 5s;
+  -o-animation:aniload 5s;
+  animation:aniload 5s;
+}
+
+#box6 {
+  -webkit-animation:aniload 6s;
+  -moz-animation:aniload 6s;
+  -ms-animation:aniload 6s;
+  -o-animation:aniload 6s;
+  animation:aniload 6s;
+}
+/*End of intro text*/
+/*Hover button*/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900');
+$brand-primary: linear-gradient(100deg, #560a9b, #9e158f);
+$brand-secondary: linear-gradient(100deg, #003f77, #05c4b5);
+$bezier: cubic-bezier(.19,1,.22,1);
+$border-radius: 8px;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn-animate {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 16px 47px -15px rgb(89, 11, 155);
+  background: none;
+  transition: all .2s $bezier;
+  border-radius: $border-radius;
+  overflow: hidden;
+  outline: none;
+  transform: translateZ(0);
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:before,
+  &:after {
+    border-radius: $border-radius;
+    content: '';
+    z-index: -1;
+    background: $brand-primary;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  &:after {
+    background: $brand-secondary;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .5s $bezier;
+    transition-delay: .1s;
+  }
+
+  &:hover {
+    box-shadow: 0px 16px 47px -15px #003f77;
+
+    &:after {
+      transform: scaleY(1);
+      transform-origin: bottom;
+      transition-delay: 0s;
+    }
+  }
+  
+  &:active {
+    transform: translateY(4px) translateZ(0);
+    box-shadow: 0px 8px 10px -6px #003f77;
+  }
+}
+/*End of hover button*/
+
+
+
+
+
+
+
+
